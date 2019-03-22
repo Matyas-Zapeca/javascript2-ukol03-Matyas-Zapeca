@@ -60,4 +60,34 @@ export default class Library {
     }
   }
 
+  finishCurrentBook(){
+    if(this.currentBook !== null){
+      this.currentBook.read();
+      this.currentBook = this.lastBook;
+      this.currentBook = null;
+      this.unreadBooks--;
+    }
+  }
+
+  listUnreadBooks(){
+    let unRead = this.bookList.filter(item => item.isRead === false)
+    console.table(unRead);
+  }
 }
+
+/*
+  renderHTML(){
+    for(let i = 0; i <= this.bookList; i++){
+      let ht = `<div class="book">
+          <div class="book__image">
+            <img src="images/${this.bookList[i].image}.jpg" alt="Obálka Název knihy">
+          </div>
+          <div class="book__info">
+            <h3 class="book__title">${this.bookList[i].title}</h3>
+            <p class="book__meta">${this.bookList[i].author}, ${this.bookList[i].year}</p>
+          </div>
+        </div>`;
+      document.write(ht);
+    }
+  }
+*/

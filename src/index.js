@@ -28,4 +28,8 @@ knihovna.addBook( new Book('H. G. Wells', 'The War of the Worlds', 1897, 'the-wa
 knihovna.startReadingNextBook();
 
 /* vypíšeme všechny knihy v knihovně */
-knihovna.listAllBooks();
+//knihovna.listAllBooks();
+
+knihovna.listUnreadBooks();
+
+//knihovna.renderHTML();
